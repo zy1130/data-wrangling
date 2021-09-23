@@ -3,9 +3,12 @@ title: "Simple document"
 output: html_document
 ---
 
-```{r,echo=FALSE,message=FAlSE}
+
+```{r,echo=FALSE,message=FALSE}
 library(tidyverse)
 library(janitor)
+library(readxl)
+library(haven)
 ```
 
 
@@ -29,3 +32,30 @@ view(litters_df)
 ```{r}
 skimr::skim(litters_df)
 ```
+
+```{r}
+litters_df=
+  read_csv(
+    "FAS_litters.csv",
+    skip=5,
+    col_names = FALSE,
+    )
+```
+
+##reading from excel
+```{r}
+mlb11_df=read_excel("mlb11.xlsx")
+```
+```{r}
+fellow_df=read_excel("lotR_Words.xlsx",range="B3:D6")
+```
+
+```{r}
+litters_df_base=read.csv("FAS_litters.csv")
+litters_df_base
+```
+
+```{r}
+write_csv(fellow_df,"fellowship_words.csv")
+```
+

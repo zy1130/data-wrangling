@@ -3,19 +3,29 @@ title: "Simple document"
 output: html_document
 ---
 
-I'm an R Markdown document! 
-
-# Section 1
-
-Here's a **code chunk** that samples from 
-a _normal distribution_:
-
-```{r}
-samp = rnorm(100)
-length(samp)
+```{r,echo=FALSE,message=FAlSE}
+library(tidyverse)
+library(janitor)
 ```
 
-# Section 2
 
-I can take the mean of the sample, too!
-The mean is `r mean(samp)`.
+##import some data
+
+```{r}
+
+litters_df=read_csv("FAS_litters.csv")
+
+```
+```{r}
+names(litters_df)
+
+litters_df=janitor::clean_names(litters_df)
+litters_df
+```
+```{r,eval=FALSE}
+view(litters_df)
+```
+
+```{r}
+skimr::skim(litters_df)
+```

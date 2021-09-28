@@ -42,6 +42,12 @@ litters_df=
     )
 ```
 
+```{r}
+pulse_data = read_sas("public_pulse_data.sas7bdat")
+head(pulse_data, 5)
+```
+
+
 ##reading from excel
 ```{r}
 mlb11_df=read_excel("mlb11.xlsx")

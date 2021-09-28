@@ -391,6 +391,16 @@ litters_df</code></pre>
 <pre><code>## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>pulse_data = read_sas(&quot;public_pulse_data.sas7bdat&quot;)
+head(pulse_data, 5)</code></pre>
+<pre><code>## # A tibble: 5 x 7
+##      ID   age Sex   BDIScore_BL BDIScore_01m BDIScore_06m BDIScore_12m
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+## 1 10003  48.0 male            7            1            2            0
+## 2 10015  72.5 male            6           NA           NA           NA
+## 3 10022  58.5 male           14            3            8           NA
+## 4 10026  72.7 male           20            6           18           16
+## 5 10035  60.4 male            4            0            1            2</code></pre>
 </div>
 <div id="reading-from-excel" class="section level2">
 <h2>reading from excel</h2>
